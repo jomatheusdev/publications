@@ -3,9 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const userRoutes = require('./modules/user/routes/UserRoute');
 const postRoutes = require('./modules/post/routes/PostRoute');
+const likeRoutes = require('./modules/like/routes/LikeRoute'); // Adicione esta linha
 const sequelize = require('./config/db');
 const swaggerUi = require('swagger-ui-express');
-const swaggerJsdoc = require('swagger-jsdoc');
 const { graphqlHTTP } = require('express-graphql');
 const { mergeSchemas } = require('@graphql-tools/schema');
 const userSchema = require('./modules/user/graphql/schema');
@@ -20,6 +20,7 @@ const swaggerDocs = require('./config/swagger');
 app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
+app.use('/likes', likeRoutes); // Adicione esta linha
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 /**

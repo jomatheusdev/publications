@@ -30,7 +30,7 @@ const swaggerOptions = {
       }
     ]
   },
-  apis: ['./modules/user/routes/*.js', './modules/post/routes/*.js', './index.js']
+  apis: ['./modules/user/routes/*.js', './modules/post/routes/*.js', './modules/like/routes/*.js', './index.js']
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
