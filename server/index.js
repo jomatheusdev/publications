@@ -10,8 +10,6 @@ const { graphqlHTTP } = require('express-graphql');
 const { mergeSchemas } = require('@graphql-tools/schema');
 const userSchema = require('./modules/user/graphql/schema');
 const postSchema = require('./modules/post/graphql/schema');
-const User = require('./modules/user/models/UserModel');
-const Post = require('./modules/post/models/PostModel');
 const setupAssociations = require('./config/associations');
 
 const app = express();
